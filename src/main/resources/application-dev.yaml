@@ -1,0 +1,32 @@
+server:
+  port: 9000
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  datasource:
+    username: root
+    password: 314159.com
+    url: jdbc:mysql://localhost:3306/college_compare?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      maxActive: 20
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    #password:
+    connect-timeout: 30000
+    client-type: lettuce
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# mybatis-plus配置
+mybatis-plus:
+  # entity别名
+  type-aliases-package: com.skyline.data.dao
+  # 开启sql日志
+  #configuration:
+  #  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
